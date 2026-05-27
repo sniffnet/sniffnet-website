@@ -6,7 +6,7 @@ on:
 #  workflow_dispatch:
 
 env:
-  GH_API_TOKEN: ${{ secrets.GH_API_TOKEN }}
+  GH_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 jobs:
   update-download-stats:
@@ -19,7 +19,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          ref: master
+          ref: main
 
       - name: Run update_download_stats.sh
         run: ./update_download_stats.sh
